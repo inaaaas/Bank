@@ -14,20 +14,20 @@ BankAccount::BankAccount(const std::string& accountHolder, int accountNumber, do
     this -> m_accountNumber = accountNumber;
     this -> m_balance = balance;
 }
-BankAccount::BankAccount(const BankAccount& other) {
-    this -> m_accountHolder = other.m_accountHolder;
-    this -> m_accountNumber = other.m_accountNumber;
-    this -> m_balance = other.m_balance;
-}
+BankAccount::BankAccount(const BankAccount& other) 
+    : m_accountHolder(other.m_accountHolder),
+      m_accountNumber(other.m_accountNumber),
+      m_balance(other.m_balance) {}
+
 BankAccount& BankAccount::operator=(const BankAccount& other) {
-    if (this == &other) {
-        return *this;
+    if (this != &other) {
+        m_accountHolder = other.m_accountHolder;
+        m_accountNumber = other.m_accountNumber;
+        m_balance = other.m_balance;
     }
-    this -> m_accountHolder = other.m_accountHolder;
-    this -> m_accountNumber = other.m_accountNumber;
-    this -> m_balance = other.m_balance;
     return *this;
 }
+
 BankAccount::~BankAccount() {
     std::cout << "Account number " << m_accountHolder << " is destroyed." << std::endl;
 }
