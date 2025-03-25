@@ -9,11 +9,8 @@ BankAccount::BankAccount() {
 /*
 BankAccount::BankAccount() : m_accountHolder("Unknown"), m_accountNumber(0), m_balance(0.0) {}
 */
-BankAccount::BankAccount(const std::string& accountHolder, int accountNumber, double balance) {
-    this -> m_accountHolder = accountHolder;
-    this -> m_accountNumber = accountNumber;
-    this -> m_balance = balance;
-}
+BankAccount::BankAccount(const std::string& accountHolder, int accountNumber, double balance)
+    : m_accountHolder(accountHolder), m_accountNumber(accountNumber), m_balance(balance) {}
 BankAccount::BankAccount(const BankAccount& other) 
     : m_accountHolder(other.m_accountHolder),
       m_accountNumber(other.m_accountNumber),
