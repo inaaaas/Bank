@@ -29,7 +29,7 @@ BankAccount& BankAccount::operator=(const BankAccount& other) {
     return *this;
 }
 BankAccount::~BankAccount() {
-    std::cout << "Account number " << m_accountHolder << "is destroyed." << std::endl;
+    std::cout << "Account number " << m_accountHolder << " is destroyed." << std::endl;
 }
 
 void BankAccount::deposit(double amount) {
